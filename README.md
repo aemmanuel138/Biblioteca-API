@@ -38,7 +38,7 @@ Por padrão a Biblioteca-Fácil usa SQLite3 como banco de dados, porém ela pode
 
 ## Instalação
 ```shell
-    #Baixando proeto
+    #Baixando projeto
     git clone https://github.com/oopaze/Biblioteca-API.git
 
     #Entrando na pasta do projeto
@@ -69,10 +69,10 @@ Por padrão a Biblioteca-Fácil usa SQLite3 como banco de dados, porém ela pode
 
 ### Usuarios
 
-Todo usuário é composto é por um ID, um name, um username, um password, um Admin e uma relação OneToOne com emprestimos.
+Todo usuário é composto é por um ID, um name, um username, um password, um Admin e uma relação OneToOne com empréstimos.
 
 1. `user/` - GET - Mostra todos os usuários (Somente para Administradores)
-2. `user/voce/` - GET - Mostra todos os dados do usuario logado (Necessita estar logado)
+2. `user/voce/` - GET - Mostra todos os dados do usuário logado (Necessita estar logado)
 3. `user/` - POST - Cria um novo usuário
 
 > Para adicionar um usuário é necessário ser enviado um JSON contendo os campos "name","username","password" e "admin".
@@ -119,7 +119,7 @@ Todo usuário é composto é por um ID, um name, um username, um password, um Ad
 
 ### Livros
 
-Todo livro é composto por um ID, um titulo, um volume, um disponivel, um autores, um adicionado em, um atualizado em e uma coluna de relação OneToMany com emprestimos.
+Todo livro é composto por um ID, um título, um volume, um disponível, um autores, um adicionado em, um atualizado em e uma coluna de relação OneToMany com empréstimos.
 
 1. `livro/` - GET - Mostra todos os livros (Necessita estar logado)
 2. `livro/` - POST - Adiciona um livro (Somente para Administradores)
@@ -211,17 +211,17 @@ Todo autor é composto por um name e um ID, porém o campo ID não é necessári
     "name": nome do autor
   }
 ```
-4. `autor/:id/` - DELETE - Deletar um autor pelo ID (Somente para Administradores)
+4. `autor/:id/` - DELETE - Deletar um autor pelo ID (Somente para Administradores).
 
 > Para deletar um autor é necessário passar o ID do autor na URL.
 
 ### Biblioteca
 
-Esta  aplicação engloba as funções principais da biblioteca. É aqui onde são feitos o controle dos livros, dos emprestimos, das devoluções, das disponibilidades e das pendências.
+Esta  aplicação engloba as funções principais da biblioteca. É aqui onde são feitos o controle dos livros, dos empréstimos, das devoluções, das disponibilidades e das pendências.
 
-1. `biblioteca/emprestar/` - POST - Realiza o emprestimos dos livros(Somente para Administradores)
+1. `biblioteca/emprestar/` - POST - Realiza os empréstimos dos livros (Somente para Administradores).
 
-> Para adicionar um emprestimo é necessário ser enviado um JSON contendo com um campo opcional "usuario" com o ID do usuário e um campo "livros" com um Array com o ID de cada livro a ser emprestado. Se o campo "usuario" não for enviado o emprestimo sera feito com o usuário logado.
+> Para adicionar um empréstimo é necessário ser enviado um JSON contendo com um campo opcional "usuario" com o ID do usuário e um campo "livros" com um Array com o ID de cada livro a ser emprestado. Se o campo "usuario" não for enviado o empréstimo será feito com o usuário logado.
 
 **como por exemplo:**
 ```
@@ -234,7 +234,7 @@ Esta  aplicação engloba as funções principais da biblioteca. É aqui onde s�
     ]
   }
 ```
-2. `biblioteca/devolucao/` - POST - Realiza a devolução do livro(Somente para Administradores)
+2. `biblioteca/devolucao/` - POST - Realiza a devolução do livro (Somente para Administradores).
 
 > Para realizar uma devolução é necessário ser enviado um JSON com o campo "usuario" contendo o ID do usuário.
 
